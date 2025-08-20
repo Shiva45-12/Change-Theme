@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Theme</title>
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .box {
+      width: 95%;
+      height: 500px;
+      background-color:white;
+      border: 5px solid black;
+      box-shadow: 3px 4px 6px;
+      margin: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: #121212 !important;
+      color: white;
+      border-color: white;
+    }
+
+    #b {
+      height: 40px;
+      width: 100px;
+      background-color: rgb(2, 34, 62);
+      color: aliceblue;
+      border-radius: 8px;
+      box-shadow: 2px 3px 5px red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box"></div>
+  <center>
+    <button id="b" onclick="DarkMode()">Dark Mode</button>
+  </center>
+
+  <script>
+    let dark = false;
+
+    function DarkMode() {
+      const box = document.getElementById("box");
+      const btn = document.getElementById("b");
+
+      dark = !dark;
+
+      if (dark) {
+        box.classList.add("dark-mode");
+        btn.textContent = "Light Mode";
+      } else {
+        box.classList.remove("dark-mode");
+        btn.textContent = "Dark Mode";
+      }
+    }
+  </script>
+</body>
+</html>
