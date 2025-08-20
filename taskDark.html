@@ -37,7 +37,9 @@
   </style>
 </head>
 <body>
-  <div class="box" id="box"></div>
+  <div class="box" id="box">
+     <h1 id="h1"></h1>
+  </div>
   <center>
     <button id="b" onclick="DarkMode()">Dark Mode</button>
   </center>
@@ -48,12 +50,14 @@
     function DarkMode() {
       const box = document.getElementById("box");
       const btn = document.getElementById("b");
-
+      document.getElementById("h1").style.textAlign="center"
+      document.getElementById("h1").style.fontSize="50px"
       dark = !dark;
 
       if (dark) {
         box.classList.add("dark-mode");
         btn.textContent = "Light Mode";
+        docum
       } else {
         box.classList.remove("dark-mode");
         btn.textContent = "Dark Mode";
@@ -62,3 +66,4 @@
   </script>
 </body>
 </html>
+
